@@ -4,82 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quick Logic Quiz</title>
-    <style>
-        body { font-family: sans-serif; display: flex; justify-content: center; padding-top: 50px; background-color: #f4f4f9; }
-        #quiz-container { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 400px; text-align: center; }
-        .option-btn { display: block; width: 100%; margin: 10px 0; padding: 10px; cursor: pointer; border: 1px solid #ddd; border-radius: 5px; background: #fff; transition: 0.2s; }
-        .option-btn:hover { background: #e0e0e0; }
-        .hidden { display: none; }
-    </style>
 </head>
 <body>
-
-<div id="quiz-container">
-    <div id="question-box">
-        <h2 id="question-text">Question goes here</h2>
-        <div id="options-container"></div>
-    </div>
-    <div id="result-box" class="hidden">
-        <h2>Quiz Complete!</h2>
-        <p>Your Score: <span id="score"></span> / 5</p>
-        <button onclick="location.reload()" class="option-btn">Restart Quiz</button>
-    </div>
-</div>
-
-<script>
-    const quizData = [
-        { q: " What is the nature and role of community for the followers of First Nations, Métis and Inuit Spiritualties", a: ["it is non essential", "it is a fundimental entity to their culture", "they eat dirt", "nature is a creation ane should be treated poorly"], correct: 2 },
-        { q: "How have the followers of First Nations, Métis and Inuit Spiritualities proven to be good stewards of Creation?", a: ["they see themselves as part of the ecosystem", "they care not about the ecosystem", "son im crine", "they see themselves as better than others"], correct: 1 },
-        { q: "what are the social and spiritual norms about courtship, marriage and family in the First Nations, Métis and Inuit Spiritualities?", a: ["reapect for the evil", "respect for the creator&a connection to the land", "chud", "they see themselves as greater than others "], correct: 2 },
-        { q: " How do First Nations, Métis and Inuit peoples keep their oral tradition true to the original belief? ", a: ["they have the kids tell them", "there are strict rules by the elders and collective verification", "they have only the elder pass them down", "only the prime minister can pass them down"], correct: 2 },
-        { q: "who is triple t", a: ["tung tung tung sahur", "im unc idk", "ta ta ta sahur", "tralalero tralala"], correct: 1 }
-    ];
-
-    let currentQuestion = 0;
-    let score = 0;
-
-    const questionText = document.getElementById("question-text");
-    const optionsContainer = document.getElementById("options-container");
-    const resultBox = document.getElementById("result-box");
-    const questionBox = document.getElementById("question-box");
-    const scoreDisplay = document.getElementById("score");
-
-    function loadQuestion() {
-        const currentData = quizData[currentQuestion];
-        questionText.innerText = currentData.q;
-        optionsContainer.innerHTML = "";
-
-        currentData.a.forEach((option, index) => {
-            const button = document.createElement("button");
-            button.innerText = option;
-            button.classList.add("option-btn");
-            button.onclick = () => handleAnswer(index);
-            optionsContainer.appendChild(button);
-        });
-    }
-
-    function handleAnswer(selectedIndex) {
-        if (selectedIndex === quizData[currentQuestion].correct) {
-            score++;
-        }
-        
-        currentQuestion++;
-
-        if (currentQuestion < quizData.length) {
-            loadQuestion();
-        } else {
-            showResults();
-        }
-    }
-
-    function showResults() {
-        questionBox.classList.add("hidden");
-        resultBox.classList.remove("hidden");
-        scoreDisplay.innerText = score;
-    }
-
-    loadQuestion();
-</script>
-
-</body>
+    <a href="indigiones_quiz/index.html">indigiones quis</a>
+</body>    
 </html>
